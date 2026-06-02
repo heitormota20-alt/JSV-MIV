@@ -1,0 +1,11 @@
+{
+  "name": "jsv-grupo-site",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"**/*.html,**/*.css,**/*.js\" --no-open"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "sharp": "^0.34.5"
+  }
+}

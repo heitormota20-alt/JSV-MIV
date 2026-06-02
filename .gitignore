@@ -1,4 +1,6 @@
 .agents/
 .claude/
+node_modules/
 Assets/node_modules/
 Assets/pdf_pages/
+*.tmp

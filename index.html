@@ -6,7 +6,7 @@
 <title>JSV Telecom - Manual de Identidade Visual</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;700;800;900&family=Inter:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
@@ -161,17 +161,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 
 /* S01 - CAPA */
 .s01{background:var(--blue);flex-direction:column}
-.s01-wm{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-}
-.s01-wm img{width:70%;opacity:.04;filter:brightness(0) invert(1);}
-.s01-inner{z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;}
-.s01-inner .logo{width:260px;filter:brightness(0) invert(1)}
-.s01-div{width:44px;height:2px;background:var(--orange)}
-.s01-sub{font-family:var(--fd);font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.6);}
-.s01-tag{font-family:var(--fd);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.32);}
+.s01-wm{position:absolute;bottom:-8%;right:-3%;pointer-events:none;}
+.s01-wm img{width:52vw;min-width:400px;opacity:.04;}
+.s01-inner{z-index:1;display:flex;flex-direction:column;align-items:center;gap:2.5vw;text-align:center;}
+.s01-inner .logo{width:26vw;min-width:240px;max-width:680px;}
+.s01-credit{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;font-family:'Poppins',sans-serif;font-size:clamp(9px,.75vw,13px);font-weight:300;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap;}
 
 /* S02 - OBJETIVO */
 .s02{background:var(--white)}
@@ -411,13 +405,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 
 <!-- S01 CAPA -->
 <section class="slide s01" id="s1">
-  <div class="s01-wm"><img src="Assets/JSV_PRETO.png" alt=""></div>
+  <div class="s01-wm"><img src="LOGO/Forma Reduzida/SVG/Versão_Reduzida_Branca.svg" alt=""></div>
   <div class="s01-inner">
-    <img src="Assets/JSV_PRETO.png" alt="JSV Telecom" class="logo a">
-    <div class="s01-div a"></div>
-    <p class="s01-sub a">Manual de Identidade Visual</p>
-    <p class="s01-tag a">Connecting today. Powering tomorrow.</p>
+    <img src="LOGO/SVG/Logo_Padrão.svg" alt="JSV Telecom" class="logo a">
   </div>
+  <p class="s01-credit a">Brand Guideline &nbsp;&middot;&nbsp; JSV Telecom &nbsp;&middot;&nbsp; By Heitor Mota</p>
 </section>
 
 <!-- S02 OBJETIVO -->
@@ -482,9 +474,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
     <p>O simbolo nasce de um "J" estilizado, formado por planos quadrados de cantos arredondados sobrepostos. O detalhe laranja representa o ponto de calor humano dentro da estrutura tecnologica.</p>
   </div>
   <div class="right">
-    <div class="s05-sk" style="background-image:url('Assets/ChatGPT_Image_14_05_2026_23_14_35_8.webp')"></div>
+    <div class="s05-sk" data-bg="url('Assets/ChatGPT_Image_14_05_2026_23_14_35_8.webp')"></div>
     <div class="s05-ic">
-      <img src="Assets/Gemini_Generated_Image_dmp7i0dmp7i0dmp7.png" alt="Simbolo JSV 3D">
+      <img data-src="Assets/Gemini_Generated_Image_dmp7i0dmp7i0dmp7.webp" src="" alt="Simbolo JSV 3D">
     </div>
   </div>
 </section>
@@ -822,15 +814,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
     <p class="a">Icone de app em squircle laranja, grade visual azul dominante com laranja em destaques e CTAs. Tipografia da marca em titulos. Imagens com pessoas reais em contexto cotidiano.</p>
   </div>
   <div class="right">
-    <img src="Assets/ChatGPT_Image_14_05_2026_23_14_34_5.webp" alt="App JSV Telecom">
+    <img data-src="Assets/ChatGPT_Image_14_05_2026_23_14_34_5.webp" src="" alt="App JSV Telecom">
   </div>
 </section>
 
 <!-- S17 UNIFORMES -->
 <section class="slide s17" id="s17">
   <div class="photos">
-    <div style="background-image:url('Assets/ChatGPT_Image_14_05_2026_23_14_34_6.webp')"></div>
-    <div style="background-image:url('Assets/ChatGPT%20Image%2026_05_2026%2C%2023_35_15.png');background-position:center top"></div>
+    <div data-bg="url('Assets/ChatGPT_Image_14_05_2026_23_14_34_6.webp')"></div>
+    <div data-bg="url('Assets/ChatGPT_Image_26_05_2026.webp')" data-bg-extra="background-position:center top"></div>
   </div>
   <div class="right">
     <span class="lbl a">Uniformes</span>
@@ -842,7 +834,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 <!-- S18 APLICACOES -->
 <section class="slide s18" id="s18">
   <div class="img-side">
-    <img src="Assets/ChatGPT_Image_14_05_2026_23_14_33_4.webp" alt="JSV Fachada">
+    <img data-src="Assets/ChatGPT_Image_14_05_2026_23_14_33_4.webp" src="" alt="JSV Fachada">
   </div>
   <div class="content">
     <span class="lbl lbl-w a">Aplicacoes</span>
@@ -855,8 +847,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 <!-- S19 AMBIENTACAO -->
 <section class="slide s19" id="s19">
   <div class="imgs">
-    <div style="background-image:url('Assets/content.webp')"></div>
-    <div style="background-image:url('Assets/ChatGPT_Image_14_05_2026_23_14_33_3.webp')"></div>
+    <div data-bg="url('Assets/content.webp')"></div>
+    <div data-bg="url('Assets/ChatGPT_Image_14_05_2026_23_14_33_3.webp')"></div>
   </div>
   <div class="panel">
     <span class="lbl lbl-w">Ambientacao</span>
@@ -925,13 +917,29 @@ SLIDES.forEach((s,i)=>{
 
 function slideW(){return window.innerWidth;}
 
+function loadSlide(i){
+  if(i<0||i>=slides.length)return;
+  const sl=slides[i];
+  sl.querySelectorAll('[data-src]:not([data-loaded])').forEach(el=>{
+    el.src=el.dataset.src;
+    el.setAttribute('data-loaded','');
+  });
+  sl.querySelectorAll('[data-bg]:not([data-loaded])').forEach(el=>{
+    el.style.backgroundImage=el.dataset.bg;
+    if(el.dataset.bgExtra)el.style.cssText+=';'+el.dataset.bgExtra;
+    el.setAttribute('data-loaded','');
+  });
+}
+
 function goTo(i){
-  if(busy||i===cur)return;
+  if(busy||i===cur||i<0||i>=slides.length)return;
   busy=true;
   const items=navEl.querySelectorAll('.sni');
   items[cur].classList.remove('active');
   slides[cur].classList.remove('entering');
   cur=i;
+  loadSlide(cur);
+  loadSlide(cur+1);
   track.style.transform=`translateX(-${cur*slideW()}px)`;
   items[cur].classList.add('active');
   items[cur].scrollIntoView({block:'nearest',behavior:'smooth'});
@@ -972,6 +980,8 @@ window.addEventListener('resize',()=>{
   requestAnimationFrame(()=>{track.style.transition='';});
 });
 
+loadSlide(0);
+loadSlide(1);
 goTo(0);
 prev.disabled=true;
 </script>
