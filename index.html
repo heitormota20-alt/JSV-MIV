@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JSV Telecom - Manual de Identidade Visual</title>
 <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;700;800;900&family=Inter:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -408,7 +409,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 .s07-right img{width:clamp(300px,36vw,540px);height:auto;}
 .s07-h1{font-family:var(--fd);font-size:clamp(62px,7vw,110px);font-weight:700;color:var(--blue);line-height:.9;letter-spacing:-.03em;}
 .s07-h1 span{color:var(--orange);}
-.s07-h2{font-family:var(--fb);font-size:clamp(14px,1.1vw,17px);font-weight:400;color:var(--g500);line-height:1.75;max-width:600px;text-wrap:pretty;}
+.s07-h2{font-family:var(--fb);font-size:clamp(16px,1.35vw,21px);font-weight:400;color:var(--g500);line-height:1.75;max-width:600px;text-wrap:pretty;}
 .s07-specs{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,16px);margin-top:clamp(8px,1vh,16px);}
 .s07-spec{display:flex;align-items:flex-start;gap:12px;}
 .s07-spec-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:6px;}
@@ -416,12 +417,22 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 
 /* S08 - LOGO & BACKGROUND */
 .s08{background:#F4F6FB;padding:0;align-items:stretch;justify-content:flex-start;gap:0;overflow:hidden;}
-.s08-left{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:clamp(36px,5vh,64px);flex:1;padding:clamp(48px,6vw,100px);}
+.s08-left{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:clamp(36px,5vh,64px);flex:1;padding:clamp(48px,6vw,100px) clamp(48px,6vw,100px) clamp(48px,6vw,100px) clamp(320px,24vw,440px);}
 .s08-h1{font-family:var(--fd);font-size:clamp(62px,7vw,110px);font-weight:700;color:var(--blue);line-height:.9;letter-spacing:-.03em;}
 .s08-h1 span{color:var(--orange);}
-.s08-h2{font-family:var(--fb);font-size:clamp(16px,1.35vw,21px);font-weight:400;color:var(--g500);line-height:1.75;max-width:620px;}
-.s08-right{width:50%;height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;flex-shrink:0;row-gap:8px;column-gap:8px;padding:clamp(16px,2vw,28px) clamp(32px,4vw,60px) clamp(16px,2vw,28px) clamp(8px,1vw,16px);}
-.s08-right img{width:100%;height:100%;object-fit:contain;display:block;}
+.s08-h2{font-family:var(--fb);font-size:clamp(16px,1.35vw,21px);font-weight:400;color:var(--g500);line-height:1.75;max-width:480px;}
+.s08-right{width:50%;height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;align-content:center;flex-shrink:0;gap:8px;padding:clamp(16px,2vw,28px) clamp(32px,4vw,60px) clamp(16px,2vw,28px) clamp(8px,1vw,16px);}
+.s08-right img{width:100%;height:auto;display:block;border-radius:12px;transition:transform 400ms cubic-bezier(.25,.46,.45,.94),box-shadow 400ms ease;cursor:pointer;}
+.s08-right img:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 20px 48px rgba(0,0,0,.18);}
+.cs-wrap{perspective:900px;position:relative;overflow:visible;transform:translateY(8%);}
+.cs-card{
+  position:absolute;top:50%;left:50%;
+  border-radius:16px;overflow:hidden;
+  transform-style:preserve-3d;
+  will-change:transform;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+}
+.cs-card img{width:100%;height:100%;object-fit:cover;display:block;}
 .icons-row{display:flex;gap:32px;align-items:center;justify-content:center;flex:1}
 .ic-item{display:flex;flex-direction:column;align-items:center;gap:14px}
 .ic-box{width:90px;height:90px;background:rgba(255,255,255,.09);border-radius:16px;display:flex;align-items:center;justify-content:center;transition:background 180ms var(--ease);}
@@ -430,24 +441,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 .ic-lbl{font-family:var(--fd);font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);}
 .icons-note{font-family:var(--fb);font-size:12px;color:rgba(255,255,255,.3);margin-top:32px;letter-spacing:.04em;text-align:center;}
 
-/* S09 - POSITIVO / NEGATIVO */
-.s09{background:var(--white)}
-.s09 .pos,.s09 .neg{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
-.s09 .pos{background:var(--white);border-right:1px solid var(--g100)}
-.s09 .neg{background:var(--blue)}
-.s09 .pos img.main{width:200px}
-.s09 .neg img.main{width:200px;filter:brightness(0) invert(1)}
-.app-ic{width:84px;height:84px;border-radius:22px;display:flex;align-items:center;justify-content:center;}
-.app-ic img{width:50px;height:50px}
-.ver-lbl{font-family:var(--fd);font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;}
-.pos .ver-lbl{color:var(--g500)}
-.neg .ver-lbl{color:rgba(255,255,255,.4)}
-.ver-title{font-family:var(--fd);font-size:26px;font-weight:800}
-.pos .ver-title{color:var(--ink)}
-.neg .ver-title{color:var(--white)}
-.ver-note{font-family:var(--fb);font-size:12.5px;text-align:center;padding:0 28px;line-height:1.5;}
-.pos .ver-note{color:var(--g500)}
-.neg .ver-note{color:rgba(255,255,255,.55)}
+/* S09 - APP ICONS */
+.s09{background:#F4F6FB;padding:0;align-items:stretch;justify-content:flex-start;gap:0;overflow:hidden;}
+.s09-left{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(32px,4vh,56px);padding:clamp(48px,6vw,100px) clamp(48px,6vw,100px) clamp(48px,6vw,100px) clamp(160px,18vw,260px);}
+.s09-right{width:50%;height:100%;flex-shrink:0;display:flex;align-items:flex-end;justify-content:flex-end;}
+.s09-right img.s09-mock{width:100%;height:100%;object-fit:contain;object-position:right bottom;display:block;}
+.s09-h1{font-family:var(--fd);font-size:clamp(62px,7vw,110px);font-weight:700;color:var(--blue);line-height:.9;letter-spacing:-.03em;}
+.s09-h1 span{color:var(--orange);}
+.s09-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,20px);width:clamp(280px,32vw,480px);}
+.s09-grid img{width:100%;height:auto;display:block;border-radius:16px;transition:transform 400ms cubic-bezier(.25,.46,.45,.94),box-shadow 400ms ease;cursor:pointer;}
+.s09-grid img:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 20px 48px rgba(0,0,0,.15);}
 
 /* S10 - CORES */
 .s10{background:var(--white);flex-direction:column;align-items:stretch;padding:60px 72px}
@@ -748,8 +751,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
 <!-- S08 LOGO & BACKGROUND -->
 <section class="slide s08" id="s8">
   <div class="s08-left">
-    <h1 class="s08-h1">+ Logo &amp; <span>background</span></h1>
-    <h2 class="s08-h2"></h2>
+    <h1 class="s08-h1">+ Logo &amp;<br><span>background</span></h1>
+    <h2 class="s08-h2">A marca JSV Telecom possui versões aprovadas para diferentes fundos: sobre cores sólidas — azul, preto, laranja e branco — aplica-se a versão branca, garantindo contraste máximo; sobre fundos claros, a versão positiva em azul e laranja. A escolha deve sempre priorizar o maior contraste com o fundo.</h2>
   </div>
   <div class="s08-right">
     <img src="Assets/BG_AZUL-8.png" alt="Background Azul">
@@ -759,25 +762,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#001a4a}
   </div>
 </section>
 
-<!-- S09 POSITIVO / NEGATIVO -->
+<!-- S09 APP ICONS -->
 <section class="slide s09" id="s9">
-  <div class="pos" style="width:50%">
-    <span class="ver-lbl a">Aplicacao</span>
-    <span class="ver-title a">Positiva</span>
-    <img src="Assets/JSV_PRETO.png" alt="Positivo" class="main a">
-    <div class="app-ic a" style="background:var(--blue)">
-      <img src="Assets/JSV_PRETO.png" style="filter:brightness(0) invert(1)" alt="">
+  <div class="s09-left">
+    <h1 class="s09-h1">App <span>Icons</span></h1>
+    <div class="s09-grid">
+      <img src="LOGO/Forma Reduzida/PNG/Reduzido_01.png" alt="App Icon 01">
+      <img src="LOGO/Forma Reduzida/PNG/Reduzido_02.png" alt="App Icon 02">
+      <img src="LOGO/Forma Reduzida/PNG/Reduzido_03.png" alt="App Icon 03">
+      <img src="LOGO/Forma Reduzida/PNG/Reduzido_04.png" alt="App Icon 04">
     </div>
-    <p class="ver-note a">Logo em azul e laranja sobre fundo branco ou claro</p>
   </div>
-  <div class="neg" style="width:50%">
-    <span class="ver-lbl a">Aplicacao</span>
-    <span class="ver-title a">Negativa</span>
-    <img src="Assets/JSV_PRETO.png" alt="Negativo" class="main a">
-    <div class="app-ic a" style="background:var(--orange);box-shadow:0 12px 40px rgba(244,96,13,.4)">
-      <img src="Assets/JSV_PRETO.png" style="filter:brightness(0) invert(1)" alt="">
-    </div>
-    <p class="ver-note a">Logo branco sobre fundo azul #004AAD ou laranja #F4600D</p>
+  <div class="s09-right">
+    <img class="s09-mock" src="Assets/Mockup_Celular.png" alt="Mockup Celular JSV">
   </div>
 </section>
 
@@ -1331,6 +1328,67 @@ void main(){
     gl.drawArrays(gl.TRIANGLES,0,3);
   }
   requestAnimationFrame(frame);
+})();
+
+// CardSwap S08
+(function(){
+  function run(){
+    const wrap = document.getElementById('s08-cards');
+    if(!wrap || !window.gsap) return;
+
+    const cards = Array.from(wrap.querySelectorAll('.cs-card'));
+    const total = cards.length;
+    if(total < 2) return;
+
+    // ~38% of viewport width, 16:9
+    const CARD_W = Math.round(Math.min(window.innerWidth * 0.38, 680));
+    const CARD_H = Math.round(CARD_W * 9/16);
+    wrap.style.width  = CARD_W + 'px';
+    wrap.style.height = CARD_H + 'px';
+    cards.forEach(c => { c.style.width = CARD_W + 'px'; c.style.height = CARD_H + 'px'; });
+
+    const DX = 26, DY = 32, SKEW = 5, DELAY = 3200;
+    const EASE = 'elastic.out(0.6,0.9)';
+    const DUR = 2, OVERLAP = 0.9, RET = 0.05;
+
+    function slot(i){ return { x:i*DX, y:-i*DY, z:-i*DX*1.5, zIndex:total-i }; }
+
+    cards.forEach((c,i) => {
+      const s = slot(i);
+      gsap.set(c,{ x:s.x, y:s.y, z:s.z, xPercent:-50, yPercent:-50,
+                   skewY:SKEW, transformOrigin:'center center', zIndex:s.zIndex, force3D:true });
+    });
+
+    let order = cards.map((_,i) => i);
+
+    function swap(){
+      const [front, ...rest] = order;
+      const elF = cards[front];
+      const tl  = gsap.timeline();
+
+      tl.to(elF, { y:'+=600', duration:DUR, ease:EASE });
+
+      tl.addLabel('p', `-=${DUR * OVERLAP}`);
+      rest.forEach((idx,i) => {
+        const s = slot(i);
+        tl.set(cards[idx], { zIndex:s.zIndex }, 'p');
+        tl.to(cards[idx], { x:s.x, y:s.y, z:s.z, duration:DUR, ease:EASE }, `p+=${i*0.15}`);
+      });
+
+      const back = slot(total - 1);
+      tl.addLabel('r', `p+=${DUR * RET}`);
+      tl.call(() => gsap.set(elF, { zIndex:back.zIndex }), null, 'r');
+      tl.to(elF, { x:back.x, y:back.y, z:back.z, duration:DUR, ease:EASE }, 'r');
+      tl.call(() => { order = [...rest, front]; });
+    }
+
+    swap();
+    setInterval(swap, DELAY);
+  }
+
+  // GSAP loaded with defer — wait for it
+  if(window.gsap) run();
+  else window.addEventListener('load', run);
 })();
 
 </script>
