@@ -168,18 +168,31 @@ export function createPixelBlast(container, opts = {}) {
 
   const clock = new THREE.Clock();
   const timeOffset = Math.random() * 1000;
-  let raf;
+  let raf = null;
+  let running = false;
+
   const animate = () => {
     uniforms.uTime.value = timeOffset + clock.getElapsedTime() * speed;
     renderer.render(scene, camera);
-    raf = requestAnimationFrame(animate);
+    if (running) raf = requestAnimationFrame(animate);
   };
-  raf = requestAnimationFrame(animate);
+
+  function start() {
+    if (!running) { running = true; raf = requestAnimationFrame(animate); }
+  }
+  function stop() {
+    running = false;
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+  }
+
+  start();
 
   return {
+    pause: stop,
+    resume: start,
     destroy() {
+      stop();
       ro.disconnect();
-      cancelAnimationFrame(raf);
       quad.geometry.dispose();
       material.dispose();
       renderer.dispose();
